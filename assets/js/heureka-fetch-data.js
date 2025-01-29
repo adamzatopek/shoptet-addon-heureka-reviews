@@ -13,11 +13,14 @@ $(document).ready(function() {
 
     if (window.location.pathname === '/') {
         let shopId = '';
+        let template = '';
         document.querySelectorAll('script').forEach(script => {
             if (script.src.includes('heureka-fetch-data.js')) {
                 const url = new URL(script.src);
                 const params = new URLSearchParams(url.search);
                 shopId = params.get('shopId');
+                template = params.get('template') || 'Classic';
+                console.log(template);
             }
         });
 
@@ -141,7 +144,183 @@ $(document).ready(function() {
                     `</div>`;
 
                 // Přidání do DOMu
-                $('.overall-wrapper .content-wrapper.container:last .content').html(reviewsHtml);
+                if ($('body').hasClass('one-column-body')) {
+
+                    if (template === 'Classic') {
+                        $('.overall-wrapper .content-wrapper.container:last .content').html(reviewsHtml);                        
+                    }
+                    else if(template === 'Techno')
+                    {
+                        var target = $("main#content .welcome-wrapper");
+                        if (target.length) {
+                            target.before(reviewsHtml);
+                        } else {
+                            $("main#content").append(reviewsHtml);
+                        }
+                    }
+                    else if(template === 'Tango')
+                        {
+                            var target = $("main#content .welcome-wrapper");
+                            if (target.length) {
+                                target.before(reviewsHtml);
+                            } else {
+                                $("main#content").append(reviewsHtml);
+                            }
+                        }
+                        else if(template === 'Waltz')
+                            {
+                                var target = $("main#content .welcome-wrapper");
+                                if (target.length) {
+                                    target.before(reviewsHtml);
+                                } else {
+                                    $("main#content").append(reviewsHtml);
+                                }
+                            }
+                            else if(template === 'Step')
+                                {
+                                    var target = $("main#content .homepage-texts-wrapper");
+                                    if (target.length) {
+                                        target.before(reviewsHtml);
+                                    } else {
+                                        $("main#content").append(reviewsHtml);
+                                    }
+                                }
+                                else if(template === 'Disco')
+                                    {
+                                        var target = $("main#content .welcome-wrapper");
+                                        if (target.length) {
+                                            target.before(reviewsHtml);
+                                        } else {
+                                            $("main#content").append(reviewsHtml);
+                                        }
+                                    }
+                                    else if(template === 'Samba')
+                                        {
+                                            var target = $("main#content .welcome-wrapper");
+                                            if (target.length) {
+                                                target.before(reviewsHtml);
+                                            } else {
+                                                $("main#content").append(reviewsHtml);
+                                            }
+                                        }                                       
+                                        else{
+                                            console.log("One column - šablona neznáma");
+                                        }
+                }
+                else if($('body').hasClass('multiple-columns-body')){
+
+                    if (template === 'Classic') {
+                        var target = $("main#content .homepage-box.welcome-wrapper");
+                        if (target.length) {
+                            target.before(reviewsHtml);
+                        } else {
+                            $("main#content").append(reviewsHtml);
+                        }
+                                            
+                    }
+                    else if(template === 'Techno')
+                        {
+                            var target = $("main#content .welcome-wrapper");
+                            if (target.length) {
+                                target.before(reviewsHtml);
+                            } else {
+                                $("main#content").append(reviewsHtml);
+                            }
+                        }
+                        else if(template === 'Tango')
+                            {
+                                var target = $("main#content .welcome-wrapper");
+                                if (target.length) {
+                                    target.before(reviewsHtml);
+                                } else {
+                                    $("main#content").append(reviewsHtml);
+                                }
+                            }
+                            else if(template === 'Waltz')
+                                {
+                                    var target = $("main#content .welcome-wrapper");
+                                    if (target.length) {
+                                        target.before(reviewsHtml);
+                                    } else {
+                                        $("main#content").append(reviewsHtml);
+                                    }
+                                }
+                                else if(template === 'Step')
+                                    {
+                                        var target = $("main#content .homepage-texts-wrapper");
+                                        if (target.length) {
+                                            target.before(reviewsHtml);
+                                        } else {
+                                            $("main#content").append(reviewsHtml);
+                                        }
+                                    }
+                                    else if(template === 'Disco')
+                                        {
+                                            var target = $("main#content .welcome-wrapper");
+                                            if (target.length) {
+                                                target.before(reviewsHtml);
+                                            } else {
+                                                $("main#content").append(reviewsHtml);
+                                            }
+                                        }
+                                        else if(template === 'Samba')
+                                            {
+                                                var target = $("main#content .welcome-wrapper");
+                                                if (target.length) {
+                                                    target.before(reviewsHtml);
+                                                } else {
+                                                    $("main#content").append(reviewsHtml);
+                                                }
+                                            }
+                                           
+                                            else{
+                                                console.log("Multiple columns - šablona neznáma");
+                                            }
+                }
+                else{
+                    if(template === 'Echo')
+                        {
+                            var target = $("main#content-in .welcome-wrap");
+                            if (target.length) {
+                                target.before(reviewsHtml);
+                            } else {
+                                $("main#content-in").append(reviewsHtml);
+                            }
+                        }
+                        else if(template === 'Soul')
+                            {
+                            var target = $("main#content-in article.welcome");
+                            if (target.length) {
+                                target.before(reviewsHtml);
+                            } else {
+                                $("main#content-in").append(reviewsHtml);
+                            } 
+                            }
+                            else if(template === 'Pop')
+                                {
+                                    var target = $("main#content-in article#welcome");
+                                    if (target.length) {
+                                        target.before(reviewsHtml);
+                                    } else {
+                                        $("main#content-in").append(reviewsHtml);
+                                    } 
+                                }
+                                else if(template === 'Rock')
+                                    {
+                                        var target = $("main#content-in article#welcome");
+                                        if (target.length) {
+                                            target.before(reviewsHtml);
+                                        } else {
+                                            $("main#content-in").append(reviewsHtml);
+                                        } 
+                                    }
+                                    else{
+                                        console("Ani jedna ze tříd one-column-body nebo multiple-columns-body");
+                                    }
+                    
+                }
+
+   
 
                 // Inicializace slideru
                 initializeSlider();

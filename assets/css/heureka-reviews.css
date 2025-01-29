@@ -3,6 +3,9 @@
     color: #F6CB00;
 }
  .store-info a,  .store-info .numb-of-customers{
+    color: var(--color-primary);
+}
+body.template-14 .store-info a,  body.template-14  .store-info .numb-of-customers{
     color: var(--color-secondary);
 }
  .reviews-total-rating .value{
@@ -164,7 +167,18 @@ h2.reviews-header{
     justify-content: center;
     margin-top: 2px;
 }
-
+body.template-06 .reviews-carousel .prev-reviews:before,
+body.template-08 .reviews-carousel .prev-reviews:before,
+body.template-05 .reviews-carousel .prev-reviews:before,
+body.template-04 .reviews-carousel .prev-reviews:before{
+    content: "\e61e";
+}
+body.template-06 .reviews-carousel .next-reviews:before,
+body.template-08 .reviews-carousel .next-reviews:before, 
+body.template-05 .reviews-carousel .next-reviews:before,
+body.template-04 .reviews-carousel .next-reviews:before{
+    content: "\e61d";
+}
 
 .review-summary {
     margin-bottom: 10px;
