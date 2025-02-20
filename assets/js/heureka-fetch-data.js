@@ -115,7 +115,7 @@ $(document).ready(function() {
                     `<div class="reviews-content ${reviewClass}">` +
                     `    <div class="reviews-total-rating"><span class="value">${averageRatingPercent} %</span>&nbsp;&nbsp;<span class="store-stars">${getStarRating(averageRating)}</span></div>` +
                     `    <div class="store-info">` +
-                    (heurekaShopName ? `${countryTranslations[heurekaCountry][0]} <a href="${reviewsUrl}">${heurekaShopName}</a> ${countryTranslations[heurekaCountry][1]} <span class="numb-of-customers">${reviewsCount}</span> ${countryTranslations[heurekaCountry][2]}.` : `${countryTranslations[heurekaCountry][0]} ${countryTranslations[heurekaCountry][1]} <span class="numb-of-customers">${reviews.length}</span> ${countryTranslations[heurekaCountry][2]} ${countryTranslations[heurekaCountry][3]} <a href="${reviewsUrl}">${countryTranslations[heurekaCountry][4]}</a>.`) +
+                    (heurekaShopName ? `${countryTranslations[heurekaCountry][0]} <a href="${reviewsUrl}">${heurekaShopName}</a> ${countryTranslations[heurekaCountry][1]} <span class="numb-of-customers">${reviewsCount}</span> ${countryTranslations[heurekaCountry][2]} ${countryTranslations[heurekaCountry][3]} <a href="${reviewsUrl}">${countryTranslations[heurekaCountry][4]}</a>.` : `${countryTranslations[heurekaCountry][0]} ${countryTranslations[heurekaCountry][1]} <span class="numb-of-customers">${reviews.length}</span> ${countryTranslations[heurekaCountry][2]} ${countryTranslations[heurekaCountry][3]} <a href="${reviewsUrl}">${countryTranslations[heurekaCountry][4]}</a>.`) +
                     `</div>` +
                     `    <div class="reviews-carousel">` +
                     `        <div class="prev-reviews"></div>` +
