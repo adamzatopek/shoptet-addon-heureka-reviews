@@ -147,7 +147,7 @@ $(document).ready(function() {
                 if ($('body').hasClass('one-column-body')) {
 
                     if (template === 'Classic') {
-                        $('.overall-wrapper .content-wrapper.container:last .content').html(reviewsHtml);                        
+                        $('.overall-wrapper .content-wrapper.container:last .content').append(reviewsHtml);                        
                     }
                     else if(template === 'Techno')
                     {
